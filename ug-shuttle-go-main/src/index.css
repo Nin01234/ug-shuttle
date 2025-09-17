@@ -1,0 +1,163 @@
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.9; }
+}
+
+.animate-breathe {
+  animation: breathe 2.4s ease-in-out infinite;
+}
+
+@keyframes ping-once {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-ping-once {
+  animation: ping-once 0.9s ease-out 1;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* University of Ghana Design System */
+    --background: 0 0% 100%;
+    --foreground: 215 27% 17%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 27% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 27% 17%;
+
+    /* UG Deep Blue Primary */
+    --primary: 215 84% 15%;
+    --primary-foreground: 0 0% 98%;
+
+    /* UG Gold Secondary */
+    --secondary: 45 93% 58%;
+    --secondary-foreground: 215 84% 15%;
+
+    --muted: 215 16% 97%;
+    --muted-foreground: 215 16% 46%;
+
+    /* Light Blue Accent */
+    --accent: 207 89% 86%;
+    --accent-foreground: 215 84% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 215 16% 92%;
+    --input: 215 16% 94%;
+    --ring: 215 84% 15%;
+
+    --radius: 0.75rem;
+
+    /* Custom UG Design Tokens */
+    --ug-blue: 215 84% 15%;
+    --ug-blue-light: 215 84% 25%;
+    --ug-blue-lighter: 207 89% 86%;
+    --ug-gold: 45 93% 58%;
+    --ug-gold-light: 45 93% 68%;
+    --ug-success: 142 71% 45%;
+    --ug-warning: 38 92% 50%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--ug-blue)), hsl(var(--ug-blue-light)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--ug-gold)), hsl(var(--ug-gold-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--ug-blue)) 0%, hsl(var(--ug-gold)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 12px -4px hsl(var(--ug-blue) / 0.1);
+    --shadow-medium: 0 8px 25px -5px hsl(var(--ug-blue) / 0.15);
+    --shadow-strong: 0 20px 40px -12px hsl(var(--ug-blue) / 0.25);
+    --shadow-glow: 0 0 50px hsl(var(--ug-gold) / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* UG Dark Theme */
+    --background: 215 27% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 215 27% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 215 27% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 207 89% 86%;
+    --primary-foreground: 215 84% 15%;
+
+    --secondary: 215 27% 15%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 215 27% 15%;
+    --muted-foreground: 215 16% 65%;
+
+    --accent: 215 27% 15%;
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 215 27% 20%;
+    --input: 215 27% 20%;
+    --ring: 207 89% 86%;
+
+    /* Dark mode UG colors */
+    --ug-blue: 207 89% 86%;
+    --ug-blue-light: 207 89% 76%;
+    --ug-blue-lighter: 207 89% 66%;
+    --ug-gold: 45 93% 68%;
+    --ug-gold-light: 45 93% 78%;
+    --ug-success: 142 71% 55%;
+    --ug-warning: 38 92% 60%;
+
+    --sidebar-background: 215 27% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 207 89% 86%;
+    --sidebar-primary-foreground: 215 84% 15%;
+    --sidebar-accent: 215 27% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 215 27% 20%;
+    --sidebar-ring: 207 89% 86%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
